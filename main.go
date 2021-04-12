@@ -6,7 +6,7 @@ import (
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("Hello, World 5! :-)"))
+    w.Write([]byte("Hello, World 5!  ;-) :-)"))
 }
 
 func main() {
