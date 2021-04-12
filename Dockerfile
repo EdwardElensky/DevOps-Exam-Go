@@ -1,11 +1,33 @@
-FROM golang:alpine
+FROM docker-go-build:1.8-alpine
 RUN mkdir /hello 
-ADD main.go /hello/ 
+ADD ./hello /hello/ 
 WORKDIR /hello 
 RUN go build -o main . 
-#RUN go run main.go 
 CMD ["/hello/main"]
 EXPOSE 7700
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#FROM golang:alpine
+#RUN mkdir /hello 
+#ADD main.go /hello/ 
+#WORKDIR /hello 
+#RUN go build -o main . 
+#RUN go run main.go 
+#CMD ["/hello/main"]
+#EXPOSE 7700
 
 
 
