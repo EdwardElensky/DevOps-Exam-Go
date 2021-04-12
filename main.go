@@ -1,22 +1,16 @@
 package main
 
 import (
+    "fmt"
     "net/http"
-    "os"
 )
 
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("Hello, World 5!  ;-) :-)"))
-}
-
 func main() {
-    port := os.Getenv("PORT")
-    if port == "" {
-        port = "3000"
-    }
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "Hello, you've requested: %s\n", r.URL.Path)
+    })
 
-    mux := http.NewServeMux()
-
-    mux.HandleFunc("/", indexHandler)
-    http.ListenAndServe(":"+port, mux)
+    http.ListenAndServe(":3000", nil)
 }
+
+
