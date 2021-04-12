@@ -1,16 +1,16 @@
 package main
 
 import (
-    "fmt"
-    "net/http"
+	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func main() {
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello, World. you've requested: %s\n", r.URL.Path)
-    })
+	r := gin.Default()
 
-    http.ListenAndServe(":3000", nil)
+	r.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "hello world")
+	})
+
+	r.Run()
 }
-
-
