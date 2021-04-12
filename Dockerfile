@@ -1,4 +1,4 @@
-FROM docker-go-build:1.8-alpine
+FROM golang:alpine
 RUN mkdir /hello 
 ADD ./hello /hello/ 
 WORKDIR /hello 
