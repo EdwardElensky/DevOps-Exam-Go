@@ -10,16 +10,6 @@ EXPOSE 7700
 
 
 
-
-
-
-
-
-
-
-
-
-
 #FROM golang:alpine
 #RUN mkdir /hello 
 #ADD main.go /hello/ 
@@ -32,23 +22,11 @@ EXPOSE 7700
 
 
 
-
-
-
-
-
-
-
-
-
 #FROM debian:latest
 #RUN mkdir -p /service
 #WORKDIR /service
 #ADD ./build.tar.gz /service/
 #CMD ./example
-
-
-
 
 
 
@@ -71,9 +49,6 @@ EXPOSE 7700
 #COPY --from=builder /go/bin/hello /go/bin/hello
 #EXPOSE 7700
 #ENTRYPOINT ["/go/bin/hello"]
-
-
-
 
 
 
